@@ -40,9 +40,9 @@ export class AuthentificationService {
   }
 
   login(credentials: { email; password }): Observable<any> {
-    // vérifie dans l'api si les identifiants (credentials) existent
-    return this.http.post('localhost:7000/authentication', credentials).pipe(
-      // on récupère data qui vient de l'api
+    // l'api vérifie si les identifiants (credentials) existent et renvoie un token si c'est le cas
+    return this.http.post('http://localhost:5550/authentication', credentials).pipe(
+      // on récupère data qui vient de l'api (data s'appelle comme ça car on l'a décidé (ligne 47))
       // data contient token
       map((data: any) => data.token),
       // ici from sert à transformer une promesse en observable
