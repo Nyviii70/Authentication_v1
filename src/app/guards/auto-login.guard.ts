@@ -15,7 +15,7 @@ export class AutoLoginGuard implements CanLoad {
   canLoad(): Observable<boolean> {
     return this.authService.isAuthentificated.pipe(
       filter(val => val !== null),
-      // pour que l'observable s'rrête au premier résultat
+      // pour que l'observable s'arrête au premier résultat
       take(1),
       map(isAuthentificated => {
         // si l'utilisateur est authentifié, il accède directement à l'application

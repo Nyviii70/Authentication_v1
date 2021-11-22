@@ -26,9 +26,9 @@ export class LoginPage implements OnInit {
     this.credentials = this.fb.group({
       // on indique dans le array qu'il y a un validateur et quel type de validateur
       // à la place des '' il est possible d'écrire quelque chose qui sera affiché par défaut dans le champ
-      email: ['', [Validators.required, Validators.email]],
+      email: ['email', [Validators.required, Validators.email]],
       // le (6) = nombre de caractères minimum
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['password', [Validators.required, Validators.minLength(6)]],
     });
   }
 
